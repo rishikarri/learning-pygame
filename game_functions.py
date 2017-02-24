@@ -3,13 +3,19 @@ import pygame
 import sys
 
 
-def check_events(hero):
+def check_events(hero, start_button, game_settings):
 	for event in pygame.event.get(): 
 		# this means the user clicked on the red x
 		if event.type == pygame.QUIT: 
 			sys.exit() 
 			# halt the entire program
-			# Stop the game, the user wants to stop playing			
+			# Stop the game, the user wants to stop playing	
+
+		elif event.type = pygame.MOUSEBUTTONDOWN: 
+			mouse_x, mouse_y = pygame.mouse.get_pos();
+			if start_button.rect.collidepoint(mouse_x, mouse_y):
+				game_settings.game_active = True;
+				game.active = False		
 		elif event.type == pygame.KEYDOWN:
 			print event.key
 
